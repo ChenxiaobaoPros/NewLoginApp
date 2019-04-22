@@ -7,11 +7,18 @@ namespace NewLoginAapp
 {
     public partial class App : Application
     {
+        public static bool isUserLogIn {get;set;}
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            if (isUserLogIn)
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
         }
 
         protected override void OnStart()

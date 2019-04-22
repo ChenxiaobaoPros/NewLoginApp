@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="登录"
+             x:Class="NewLoginAapp.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="5">
+                <Label FontSize="Large" Text="用户名:"/>
+                <Entry x:Name="user_Name" FontSize="Default" HeightRequest="50"
+                        Placeholder="用户名/手机号/邮箱" Keyboard="Default" ReturnType="Next"/>
+                <Label FontSize="Large" Text="密码:"/>
+                <Entry x:Name="user_Password" FontSize="Default" HeightRequest="50" IsPassword="True" 
+                        Placeholder="密码输入" Keyboard="Default" ReturnType="Next"/>
+                <StackLayout Orientation="Horizontal" >
+                    <ImageButton Source="XamarinLogo.png"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="StartAndExpand"/>
+                    <!--加入字体图标-->
+                    <!--&#xf111;-->
+                    <!--<Image BackgroundColor="#D1D1D1">
+                        <Image.Source>
+                            <FontImageSource Glyph="&#xf111;"
+                                             FontFamily="{OnPlatform iOS=iconize-fontawesome-regular, Android=iconize-fontawesome-regular.ttf#}"
+                                             Size="20"/>
+                        </Image.Source>
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="OnTapGestureRecognizerTappedImage"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>-->
+                    <Label Text="记住密码" HorizontalOptions="StartAndExpand"/>
+                    <!--点击手势-->
+                    <Label Text="注册" HorizontalOptions="EndAndExpand" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="OnTapGestureRecognizerTappedLable"
+                                NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <Button HeightRequest="50" Margin="8" CornerRadius="5" Text="登录" 
+                        Clicked="Login_Clicked" FontSize="Default" TextColor="White" 
+                        BackgroundColor="#1976D2"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
