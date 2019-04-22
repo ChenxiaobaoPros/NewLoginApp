@@ -23,20 +23,21 @@ namespace NewLoginAapp.Base.SQLite
         //查重
         public async Task<User> CnkiUser(User user)
         {
+
             //查重
-            var _user= DbaHelper.Sql.Select.Star.From(nameof(User)).Where
-               .Field_Equal_Para(nameof(User.Username), user.Username)
-               .Or.Field_Equal_Para(nameof(User.Email), user.Email);
+            var _user = DbaHelper.Sql.Select.Star.From(nameof(User))
+                .Where.Field_Equal_Para(nameof(User.Username), user.Username)
+                .Or.Field_Equal_Para(nameof(User.Email), user.Email);
             return await DbaHelper.GetEntityAsync<User>();
         }
         //保存用户
-        public async Task<int> SaveUser(User user)
+        public async Task<long> SaveUser(User user)
         {
             var userCnki = CnkiUser(user).Result;
             if (userCnki == null)
             {
                 //保存
-                return await DbaHelper.UpdateAsync<User>(user);
+                return await DbaHelper.InsertAsync<User>(user);
             }
             else
             {

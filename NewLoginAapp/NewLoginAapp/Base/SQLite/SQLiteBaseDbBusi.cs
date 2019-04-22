@@ -8,6 +8,7 @@ namespace NewLoginAapp.Base.SQLite
     {
         public SQLiteBaseDbBusi()
         {
+
         }
 
         private DbHelper _dbaHelper = null;
