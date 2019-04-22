@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewLoginAapp.Base.SQLite;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,9 +12,9 @@ namespace NewLoginAapp
         public App()
         {
             InitializeComponent();
-            if (isUserLogIn)
+            if (!isUserLogIn)
             {
-                MainPage = new NavigationPage(new MainPage());
+                MainPage = new NavigationPage(new LoginPage());
             }
             else
             {

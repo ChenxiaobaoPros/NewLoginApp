@@ -1,0 +1,1791 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HsjCore</name>
+    </assembly>
+    <members>
+        <member name="P:Hsj.BaseDataModel.FieldDic">
+            <summary>
+            主要用来通过json格式传值时序列化和反序列化使用
+            </summary>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.Insert(`0,System.Boolean)">
+            <summary>
+            插入实体并根据getID设置返还ID
+            </summary>
+            <param name="enity"></param>
+            <param name="getID"></param>
+            <returns>getID=1返回ID，getID=false返回插入数量</returns>       
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.Insert(System.Collections.Generic.IEnumerable{`0})">
+             <summary>
+            插入实体list，未使用事务
+             </summary>
+             <param name="enities"></param>       
+             <returns>ID list</returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.Insert(System.Collections.Generic.IEnumerable{`0},System.Boolean)">
+             <summary>
+            插入实体list，未使用事务
+             </summary>
+             <param name="enities"></param>
+             <param name="getID"></param>
+             <returns>插入记录数</returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.Update(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            更新记录
+            </summary>
+            <param name="paraDic">id必须包含在字典参数中</param>
+            <returns>更新记录的数量</returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.Delete(System.Int64)">
+            <summary>
+            通过逐渐删除记录
+            </summary>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.Delete(System.Int64[])">
+            <summary>
+            批量删除记录
+            </summary>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.IsFieldExistByValue(System.String,System.Object)">
+            <summary>
+            判断值为keyvalue的Field是否存在
+            </summary>
+            <param name="keyFieldName"></param>
+            <param name="keyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.GetIDByField(System.String,System.Object)">
+            <summary>
+            根据field的值得到对应的ID
+            </summary>
+            <param name="fieldName"></param>
+            <param name="fieldValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.GetEntityByID(System.Int64)">
+            <summary>
+            根据id得到实体
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.GetListByParentID(System.String,System.Int64)">
+            <summary>
+            根据父id得到实体列表
+            </summary>
+            <param name="parentName"></param>
+            <param name="parentID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.UpdateList(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            更新实体列表暂未实现
+            </summary>
+            <param name="insertList"></param>
+            <param name="updateDic"></param>
+            <param name="delList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.InsertAsync(`0,System.Boolean)">
+            <summary>
+            插入实体并根据getID设置返还ID
+            </summary>
+            <param name="enity"></param>
+            <param name="getID"></param>
+            <returns>getID=1返回ID，getID=false返回插入数量</returns>       
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.InsertAsync(System.Collections.Generic.List{`0})">
+             <summary>
+            插入实体list，未使用事务
+             </summary>
+             <param name="enities"></param>       
+             <returns>ID list</returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.InsertAsync(System.Collections.Generic.List{`0},System.Boolean)">
+             <summary>
+            插入实体list，未使用事务
+             </summary>
+             <param name="enities"></param>
+             <param name="getID"></param>
+             <returns>插入记录数</returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.UpdateAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            更新记录
+            </summary>
+            <param name="paraDic">id必须包含在字典参数中</param>
+            <returns>更新记录的数量</returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.DeleteAsync(System.Int64)">
+            <summary>
+            通过逐渐删除记录
+            </summary>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.DeleteAsync(System.Int64[])">
+            <summary>
+            批量删除记录
+            </summary>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.IsFieldExistByValueAsync(System.String,System.Object)">
+            <summary>
+            判断值为keyvalue的Field是否存在
+            </summary>
+            <param name="keyFieldName"></param>
+            <param name="keyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.GetIDByFieldAsync(System.String,System.Object)">
+            <summary>
+            根据field的值得到对应的ID
+            </summary>
+            <param name="fieldName"></param>
+            <param name="fieldValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.GetEntityByIDAsync(System.Int64)">
+            <summary>
+            根据id得到实体
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.GetListByParentIDAsync(System.String,System.Int64)">
+            <summary>
+            根据父id得到实体列表
+            </summary>
+            <param name="parentName"></param>
+            <param name="parentID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseDbBusi`1.UpdateListAsync(System.Collections.Generic.List{`0},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.List{System.Int64})">
+            <summary>
+            跟新实体列表暂未实现
+            </summary>
+            <param name="insertList"></param>
+            <param name="updateDic"></param>
+            <param name="delList"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hsj.Data.DbHelper">
+            <summary>
+            数据库操作的基础类
+            </summary>
+        </member>
+        <member name="T:Hsj.Data.DbHelper.DbHelperType">
+            <summary>
+            数据库类型，暂无用
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.GetPagingList``1(System.Int32@,System.Int32,System.Int32)">
+            <summary>
+            执行sql获取分页查询结果，会自动再原来的sql的基础上附加分页sql，同时自动返还totalcount
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="totalCount">总记录数，仅在第一次返还，调用时注意pageIndex=1才有效</param>
+            <param name="pageSize">每页记录数</param>
+            <param name="pageIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.GetTableSchema(System.String)">
+            <summary>
+            返回数据表结构
+            </summary>
+            <param name="tableName">表名</param>
+            <returns>空表结构</returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.Insert(System.String,System.Boolean)">
+            <summary>
+            执行插入sql并返回自增ID,非pgsql时idName允许为空允许为空
+            </summary>
+            <param name="idName"></param>
+            <param name="getID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.Insert``1(``0,System.Boolean)">
+            <summary>
+            插入一个实体，并返回ID，已为实体ID赋值，插入的sql为自动生成
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <param name="getID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.MakeInsertHelper``1(``0)">
+            <summary>
+            插入一个实体，并返回ID，已为实体ID赋值，插入的sql为自动生成
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>       
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.Update``1(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            更新一个实体，paraDic中至少要包含实体的ID，sql会自动生成
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="paraDic"></param>
+            <returns>更新的数量</returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.GetDataRow">
+            <summary>
+            执行sql得到一个数据行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.RunInTran(System.Action{System.Object})">
+            <summary>
+            在事务中执行函数，注意保持一个数据连接
+            </summary>
+            <param name="myAct">要执行的方法</param>
+        </member>
+        <member name="P:Hsj.Data.DbHelper.IDPostfix">
+            <summary>
+            全局ID后缀，用来设置表的ID与表名的关系，目前为ID，例如表User，其对应的自增ID为UserID
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.DbHelper.EraseStateStr">
+            <summary>
+            记录的状态0是已禁用 1是使用中 ...
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.DbHelper.UpdateTime">
+            <summary>
+            更新日期字段
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.Delete(System.String,System.String,System.Object)">
+            <summary>
+            根据表名、字段名字段值删除数据，sql自动生成
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="keyField">字段名</param>
+            <param name="keyValue">字段值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.Delete``1(System.Int64)">
+            <summary>
+            根据主键的值删除对应的数据行
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="keyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.Delete(System.String,System.String,System.Object[])">
+            <summary>
+            根据表名、字段名和字段值删除多个数据，注意不能超过2000个否则会有异常
+            </summary>
+            <param name="tableName"></param>
+            <param name="keyField"></param>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.MakeDeleteHelper``1(System.Int64[])">
+            <summary>
+            根据主键的值删除对应的数据行，sql自动生成
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.Delete``1(System.Int64[])">
+            <summary>
+            根据主键的值删除对应的数据行，sql自动生成
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.Delete``1(``0)">
+            <summary>
+            根据实体的主键删除对应的数据行，sql自动生成
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.MakeDeleteHelper``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            根据主键删除对应的实体,sql自动生成，实体id必须为long或int等数值类型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entitis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.Delete``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            根据主键删除对应的实体,sql自动生成，实体id必须为long或int等数值类型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entitis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.Insert``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)">
+            <summary>
+            插入列表中的实体，按顺序返回自增ID,如果getID为false返回count,默认为true，sql自动生成，使用事务
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entitis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.Update``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            更新实体，sql自动生成，使用事务
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entitis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.Update``1(``0)">
+            <summary>
+            更新实体，sql自动生成，未使用事务
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.UpdateTableFromList``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.Collections.Generic.List{System.Int64})">
+            <summary>
+            对应一次表更新，包括插入 修改、删除，sql自动生成，已使用事务，未完成
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="insertList"></param>
+            <param name="updateDic"></param>
+            <param name="delList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.DeleteAsync(System.String,System.String,System.Object)">
+            <summary>
+            根据表名、字段名字段值删除数据，sql自动生成
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="keyField">字段名</param>
+            <param name="keyValue">字段值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.DeleteAsync``1(System.Int64)">
+            <summary>
+            根据主键的值删除对应的数据行
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="keyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.DeleteAsync(System.String,System.String,System.Object[])">
+            <summary>
+            根据表名、字段名和字段值删除多个数据，注意不能超过2000个否则会有异常
+            </summary>
+            <param name="tableName"></param>
+            <param name="keyField"></param>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.DeleteAsync``1(System.Int64[])">
+            <summary>
+            根据主键的值删除对应的数据行，sql自动生成
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.DeleteaAsync``1(``0)">
+            <summary>
+            根据实体的主键删除对应的数据行，sql自动生成
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.DeleteaAsync``1(System.Collections.Generic.List{``0})">
+            <summary>
+            根据主键删除对应的实体,sql自动生成，实体id必须为long或int等数值类型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entitis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.InsertAsync``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)">
+             <summary>
+            使用事务插入列表中的实体，按顺序返回自增ID,如果getID为false自返回count，sql自动生成
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="entitis"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.UpdateAsync``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            更新实体，sql自动生成，未使用事务
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entitis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.UpdateAsync``1(``0)">
+            <summary>
+            更新实体，sql自动生成
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.BacthCUDAsync``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.Object}},System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            对应一次表更新，包括插入 修改、删除，sql自动生成，已使用事务，未完成
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="insertList"></param>
+            <param name="updateDics"></param>
+            <param name="delList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.GetPagingListAsync``1(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            执行sql获取分页查询结果，会自动再原来的sql的基础上附加分页sql，同时自动返还totalcount
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="totalCount">总记录数，仅在第一次返还，调用时注意pageIndex=1才有效</param>
+            <param name="pageSize">每页记录数</param>
+            <param name="pageIndex">索引0时为totalCount，索引1为list T</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.GetTableSchemaAsync(System.String)">
+            <summary>
+            返回数据表结构
+            </summary>
+            <param name="sTableName">表名</param>
+            <returns>空表结构</returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.InsertAsync(System.String,System.Boolean)">
+             <summary>
+            执行插入sql并返回自增ID
+             </summary>
+             <param name="getID"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.InsertAsync``1(``0,System.Boolean)">
+            <summary>
+            插入一个实体，并返回ID，已为实体ID赋值，插入的sql为自动生成
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <param name="getID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.UpdateAsync``1(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            更新一个实体，paraDic中至少要包含实体的ID，sql会自动生成
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="paraDic"></param>
+            <returns>更新的数量</returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelper.GetDataRowAsync">
+            <summary>
+            执行sql得到一个数据航
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Hsj.Data.DbHelperCore">
+            <summary>
+            封装了操作数据库的公共方法
+            </summary>
+            <summary>
+            封装了操作数据库的公共方法
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.DbHelperCore.Sql">
+            <summary>
+            command的sql
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.DbHelperCore.DbConn">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.DbHelperCore.TimeOut">
+            <summary>
+            command的超时时间,单位秒
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.DbHelperCore.CommandType">
+            <summary>
+            命令类型，可设置为存储过程或是文本命令
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.DbHelperCore.DbTran">
+            <summary>
+            事务，需手工使用BeginTran CommitTran RollBackTran和DisposeTran操作
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.DbHelperCore.Parameters">
+            <summary>
+            command的参数
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.AddParaValue(System.String,System.Object,System.Data.ParameterDirection)">
+            <summary>
+            增加参数，prepare后将不增加，只按照参数名给参数赋值
+            </summary>
+            <param name="paraName">参数名称</param>
+            <param name="paraValue">参数值</param>
+        </member>
+        <member name="F:Hsj.Data.DbHelperCore._selfComm">
+            <summary>
+            增加传出参数
+            </summary>
+            <param name="paraName">参数名称</param>
+            <param name="paraValue">参数值</param>
+        </member>
+        <member name="P:Hsj.Data.DbHelperCore.DbComm">
+            <summary>
+            command，使用完毕后自动释放
+            </summary>
+        </member>
+        <member name="T:Hsj.Data.DbHelperCore.SaveSqlParaState">
+            <summary>
+            sql与para的状态，none自动清空
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.BeginSaveStatePrepare(Hsj.Data.DbHelperCore.SaveSqlParaState)">
+            <summary>
+            不调用此方法时程序会清空sql、参数与释放command。调用的时候根据参数来确定默认为保存状态sql和参数并开启prepare提高批量的性能
+            </summary>
+            <param name="saveStateParepare">AutoClear自动清空，SaveState仅保存状态，SaveAndPrepare保存并开启prepare，haveDo内部用</param>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.EndSaveStatePrepare(System.Boolean)">
+            <summary>
+            结束保存状态和Prepare，改为自动clear sql和参数,如果isDispose为true会释放sqlcommand
+            </summary>
+            <param name="isDispose">是否释放资源</param>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.DisposeSqlCommand">
+            <summary>
+            释放myComm
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.SetDbCommandTranSql">
+            <summary>
+            将command加入事务
+            </summary>
+            <param name="curCommand"></param>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.BeginTran(System.Data.IsolationLevel)">
+            <summary>
+            开始事务，默认隔离级别为ReadCommitted
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.CommitTran">
+            <summary>
+            提交事务
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.RollBackTran(System.Exception)">
+            <summary>
+            回滚事务
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.DisposeTran">
+            <summary>
+            释放事务
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.OpenConn">
+            <summary>
+            打开数据库链接
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.CloseConn">
+            <summary>
+            关闭数据库链接，在事务中将保持状态
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.ExecuteNonQuery">
+            <summary>
+            执行查询，返回影响的行数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.ExecuteScalar">
+            <summary>
+            返回要查询的值,已将dbnll转换为null
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.ExecuteNonQueryAsync">
+            <summary>
+            执行查询，返回影响的行数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.DbHelperCore.ExecuteScalarAsync">
+            <summary>
+            返回要查询的值,已将dbnll转换为null
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Hsj.Data.MySqlDbHelper">
+            <summary>
+            mysql数据库的操作类
+            </summary>
+            
+        </member>
+        <member name="T:Hsj.Data.PgSqlDbHelper">
+            <summary>
+            postgreSql数据库的操作类
+            </summary>
+        </member>
+        <member name="T:Hsj.Data.SqliteDbHelper">
+            <summary>
+            sqlite数据库的操作类
+            </summary>
+        </member>
+        <member name="T:Hsj.Data.SqlServerDbHelper">
+            <summary>
+            sql server的数据库操作类
+            </summary>
+        </member>
+        <member name="T:Hsj.Data.GetDbConnectFactory">
+            <summary>
+            数据库连接工厂，暂未实现读写分离与数据库负载均衡
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.GetDbConnectFactory.GetMasterDbConn">
+            <summary>
+            主数据库，主要用来写
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.GetDbConnectFactory.GetSlaveDbConn">
+            <summary>
+            从数据库，只读
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.GetDbConnectFactory.GetPreDbConn">
+            <summary>
+            预先赋值，主要用来给conn赋初值以避免只读分离时的conn为空引发的错误,可使用空字符串,目前无效
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.GetDbConnectFactory.LoadBalanceDbConnection">
+            <summary>
+            数据库负载均衡
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.ParaCount">
+            <summary>
+            参数的数量
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.From(System.String)">
+            <summary>
+            from $tableName$
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.WhereAll(System.String)">
+            <summary>
+             where $conditions$
+            </summary>
+            <param name="conditions"></param>
+            <returns></returns>         
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Update(System.String)">
+            <summary>
+             update $tableName$
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.InsertInto(System.String)">
+            <summary>
+             insert into $tableName$
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field(System.String)">
+            <summary>
+             $fieldName$ ,主要是为了兼容pgsql的大小写问题
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Comma_Field(System.String)">
+            <summary>
+             ,$fieldName$  ,主要是为了兼容pgsql的大小写问题
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Table(System.String)">
+            <summary>
+             $tableName$ ,主要是为了兼容pgsql的大小写问题
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.TableField(System.String,System.String)">
+            <summary>
+            $tableName$.$fieldName$  ,主要是为了兼容pgsql的大小写问题
+            </summary>
+            <param name="tableName"></param>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.GetTableField(System.String,System.String)">
+            <summary>
+            $tableName$.$fieldName$  ,主要是为了兼容pgsql的大小写问题,只返还string值，不进行叠加
+            </summary>
+            <param name="tableName"></param>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Para(System.String)">
+            <summary>
+            @$paraName$  ,其中的@前缀可通过Para中全局设置
+            </summary>
+            <param name="paraName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Para(System.String,System.Object)">
+             <summary>
+            @$paraName$   并且自动的加入名称为paraName，值为paraValue的参数
+             </summary>
+             <param name="paraName"></param>
+             <param name="paraValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Comma_Para(System.String)">
+            <summary>
+            ,@$paraName$  ,其中的@前缀可通过Para中全局设置
+            </summary>
+            <param name="paraName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Comma_Para(System.String,System.Object)">
+            <summary>
+            ,@$paraName$  ,其中的@前缀可通过Para中全局设置
+            </summary>
+            <param name="paraName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.InsertInto(System.String,System.String)">
+            <summary>
+            insert into $tableName$($fields$)
+            </summary>
+            <param name="tableName"></param>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Values(System.String)">
+            <summary>
+            values("$values$")
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.DeleteFrom(System.String)">
+            <summary>
+            delete from $tableName$
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.InsertIntoValues(System.String,System.String[])">
+            <summary>
+            insert into $tableName$($fields[0],fields[1],...$) values(@fields[0],@fields[1],...$)
+            </summary>
+            <param name="tableName"></param>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Having(System.String)">
+            <summary>
+             haveing $conditions$
+            </summary>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.GroupBy(System.String)">
+            <summary>
+            group by $fields$
+            </summary>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.InnerJoin(System.String)">
+            <summary>
+             inner join $tableName$
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.LeftJoin(System.String)">
+            <summary>
+             left join $tableName$
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.RightJoin(System.String)">
+            <summary>
+            right join $tableName$
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.CrossJoin(System.String)">
+            <summary>
+            cross join $tableName$
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.FullJoin(System.String)">
+            <summary>
+             full join $tableName$
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.On(System.String)">
+            <summary>
+            on condition
+            </summary>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Count(System.String)">
+            <summary>
+            count($fields$)
+            </summary>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Max(System.String)">
+            <summary>
+            max($fields$)
+            </summary>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Min(System.String)">
+            <summary>
+            min($fields$)
+            </summary>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Avg(System.String)">
+            <summary>
+            avg($fields$)
+            </summary>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Sum(System.String)">
+            <summary>
+            sum($fields$)
+            </summary>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.LeftJoinOn(System.String,System.String)">
+            <summary>
+            left join $tableName$ on condition
+            </summary>
+            <param name="tableName"></param>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.RightJoinOn(System.String,System.String)">
+            <summary>
+            right join $tableName$ on condition
+            </summary>
+            <param name="tableName"></param>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.CrossJoinOn(System.String,System.String)">
+            <summary>
+            cross join $tableName$ on condition
+            </summary>
+            <param name="tableName"></param>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.InnerJoinOn(System.String,System.String)">
+            <summary>
+            inner join $tableName$ on condition
+            </summary>
+            <param name="tableName"></param>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.FullJoinOn(System.String,System.String)">
+            <summary>
+            full join $tableName$ on condition
+            </summary>
+            <param name="tableName"></param>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.As(System.String)">
+            <summary>
+            as $asName$
+            </summary>
+            <param name="asName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Quotes(System.String)">
+            <summary>
+            "$name$"
+            </summary>
+            <param name="name"></param>
+            <returns>前后加双引号</returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Conflict(System.String)">
+            <summary>
+            "conflict($fieldName$)"
+            </summary>
+            <param name="fieldName"></param>
+            <returns>conflict函数</returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Upper(System.String)">
+            <summary>
+            "upper($fieldName$)"
+            </summary>
+            <param name="fieldName"></param>
+            <returns>upper函数</returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Lower(System.String)">
+            <summary>
+            "lower($fieldName$)"
+            </summary>
+            <param name="fieldName"></param>
+            <returns>lower函数</returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Append(System.String)">
+            <summary>
+            将obj链接入sql
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.AppendFormat(System.String,System.String[])">
+            <summary>
+            以参数的形式链接sql，相当于 string.format
+            </summary>
+            <param name="format"></param>
+            <param name="objArr"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.Semicolon">
+            <summary>
+            ;号/分号
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.Star">
+            <summary>
+            *号/星号
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.Comma">
+            <summary>
+            ,号/逗号
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.Dot">
+            <summary>
+            .号/点号
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.LeftPs">
+            <summary>
+            左括号(
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.RightPs">
+            <summary>
+            右括号)
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.Quote">
+            <summary>
+            英文的引号"，前后无空格
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.EndIn">
+            <summary>
+            生成），代表in语句结束
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.Euqal">
+            <summary>
+            等于
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.NotEuqal">
+            <summary>
+            不等于
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.Less">
+            <summary>
+            小于
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.LessEqual">
+            <summary>
+            小于等于
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.Greater">
+            <summary>
+            大于
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.GreaterEqual">
+            <summary>
+            大于等于
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.ParaNamePrefix">
+            <summary>
+            参数前缀@
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.Order_By">
+            <summary>
+            order by
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.Asc">
+            <summary>
+            asc
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.Desc">
+            <summary>
+            Desc
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.SUM">
+            <summary>
+            sum
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.AVG">
+            <summary>
+            小于
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.MAX">
+            <summary>
+            max
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.MIN">
+            <summary>
+            min
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.Returning">
+            <summary>
+            returning
+            </summary>
+        </member>
+        <member name="P:Hsj.Data.SqlBuilder.ParaPrefix">
+            <summary>
+            默认为@，参数前缀
+            </summary>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_In(System.String)">
+            <summary>
+            $fieldName$ in(,可使用EndIn结束
+            /// </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Not_In(System.String)">
+            <summary>
+            $fieldName$ not in(,可使用EndIn结束
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Is_Null(System.String)">
+            <summary>
+            $fieldName$ is null
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Is_Not_Null(System.String)">
+            <summary>
+            $fieldName$ is not null
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Equal(System.String)">
+            <summary>
+            $fieldName$=@$fieldName$
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Equal(System.String,System.String)">
+            <summary>
+            $fieldName$=@$paraName$
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Equal_Para(System.String,System.Object)">
+            <summary>
+            $fieldName$=@$paraValue$,自动加入名称为fieldName，值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Equal_Para(System.String,System.String,System.Object)">
+            <summary>
+            $fieldName$=@$paraValue$,自动加入名称为paraName，值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <param name="paraValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Equal_Value(System.String,System.String)">
+            <summary>
+            $fieldName$=$Value$
+            </summary>
+            <param name="fieldName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:Hsj.Data.SqlBuilder.Field_NotEqual(System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:Hsj.Data.SqlBuilder.Field_NotEqual(System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:Hsj.Data.SqlBuilder.Field_NotEqual_Para(System.String,System.Object)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:Hsj.Data.SqlBuilder.Field_NotEqual_Para(System.String,System.String,System.Object)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:Hsj.Data.SqlBuilder.Field_NotEqual_Value(System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:Hsj.Data.SqlBuilder.Field_Less(System.String)">
+            <summary>
+            $fieldName$小于@$fieldName$
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Less(System.String,System.String)">
+            <summary>
+            $fieldName$小于@$paraName$
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Less_Para(System.String,System.Object)">
+            <summary>
+            $fieldName$小于@$paraValue$,自动加入名称为fieldName，值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Less_Para(System.String,System.String,System.Object)">
+            <summary>
+            $fieldName$小于@$paraValue$,自动加入名称为paraName，值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <param name="paraValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Less_Value(System.String,System.String)">
+            <summary>
+            $fieldName$小于@$Value$
+            </summary>
+            <param name="fieldName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_LessEuqal(System.String)">
+            <summary>
+            $fieldName$小于等于@$fieldName$
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_LessEuqal(System.String,System.String)">
+            <summary>
+            $fieldName$小于等于@$paraName$
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_LessEuqal_Para(System.String,System.Object)">
+            <summary>
+            $fieldName小于等于@$fieldName$,自动加入名称为paraName，值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_LessEuqal_Para(System.String,System.String,System.Object)">
+            <summary>
+            $fieldName$小于等于@$fieldName$,自动加入名称为paraName，值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <param name="paraValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_LessEuqal_Value(System.String,System.String)">
+            <summary>
+            $fieldName$小于等于@$value$
+            </summary>
+            <param name="fieldName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Greater(System.String)">
+            <summary>
+            $fieldName$大于@$fieldName$
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Greater(System.String,System.String)">
+            <summary>
+            $fieldName$大于@$paraName$
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Greater_Para(System.String,System.Object)">
+            <summary>
+            $fieldName$大于@$fieldName$,自动加入名称为paraName，值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Greater_Para(System.String,System.String,System.Object)">
+            <summary>
+            $fieldName$大于@$paraName$,自动加入名称为paraName，值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <param name="paraValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Greater_Value(System.String,System.String)">
+            <summary>
+            $fieldName$大于@$value$
+            </summary>
+            <param name="fieldName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_GreaterEqual(System.String)">
+            <summary>
+            $fieldName$大于等于@$fieldName$
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_GreaterEqual(System.String,System.String)">
+            <summary>
+            $fieldName$大于等于@$paraName$
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_GreaterEqual_Para(System.String,System.Object)">
+            <summary>
+            $fieldName$>=@$fieldName$,自动加入名称为paraName，值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_GreaterEqual_Para(System.String,System.String,System.Object)">
+            <summary>
+            $fieldName$>=@$paraName$,自动加入名称为paraName，值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <param name="paraValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_GreaterEqual_Value(System.String,System.String)">
+            <summary>
+            $fieldName>=$value$
+            </summary>
+            <param name="fieldName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Like(System.String)">
+            <summary>
+             $fieldName like $fieldName$
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Like(System.String,System.String)">
+            <summary>
+            $fieldName like $paraName$
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Like_Para(System.String,System.String,System.Byte)">
+            <summary>
+            $fieldName$ like '%$paraValue$%'，会自动加入名称为fieldName 值为paraValue的参数
+            </summary>
+            <param name="fieldName">字段名称</param>
+            <param name="paraValue">字段值</param>
+            <param name="likeType">0为前后都有% 1为左% 2为右%,其他为按照参数输入的来，默认为0</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Like_Para(System.String,System.String,System.String,System.Byte)">
+            <summary>
+             $fieldName$ like '%$paraValue$%'，其中的like类型通过likeType控制，会自动加入名称为paraName 值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <param name="paraValue"></param>
+            <param name="likeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Like_Value(System.String,System.String)">
+            <summary>
+            $fieldNmae$ like '%$value$%',其中like的方式在参数value中自行设定
+            </summary>
+            <param name="fieldName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Not_Like(System.String)">
+            <summary>
+            $fieldName$ not like '$fieldName$'
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Not_Like(System.String,System.String)">
+            <summary>
+            $fieldName$ not like '$paraName$'
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Not_Like_Para(System.String,System.String,System.Byte)">
+            <summary>
+            $fieldName$ not like %$paraValue$%,其中的like类型通过likeType控制，fieldName，值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraValue"></param>
+            <param name="likeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Not_Like_Para(System.String,System.String,System.String,System.Byte)">
+            <summary>
+            $fieldName$ not like %$paraValue$,其中的like类型通过likeType控制，自动加入名称paraName，值为paraValue的参数
+            </summary>
+            <param name="fieldName"></param>
+            <param name="paraName"></param>
+            <param name="paraValue"></param>
+            <param name="likeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Field_Not_Like_value(System.String,System.String)">
+            <summary>
+            $fieldName$ not like $value$
+            </summary>
+            <param name="fieldName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Limit(System.Int32)">
+            <summary>
+            取前count条记录
+            </summary>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Limit(System.Int32,System.Int32)">
+            <summary>
+            从start开始（包含start）选取count数量的记录，通过sqlBuilder重载处理不同数据库的情况
+            </summary>
+            <param name="start"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.CreateSqlBuilder">
+            <summary>
+            创建一个新的sqlbuilder，使用相同的dbHelper
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.GetAutoID(System.String)">
+            <summary>
+            返回获取自增ID键值的sql，通过sqlBuilder重载处理不同数据库的情况
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Empty">
+            <summary>
+            无操作，仅为了需要时做为结尾符
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.GetSqlLength">
+            <summary>
+            得到sql的长度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.Clear">
+            <summary>
+            清空sql，相当于sql=""
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.ResetSql(System.String)">
+            <summary>
+            给sql设置新值，相当于=string
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Data.SqlBuilder.CheckSqlRule">
+            <summary>
+            检查sql是否合法，仅在debug模式有效果，目前尚未实现
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Hsj.Data.SqlServerSqlBuilder">
+            <summary>
+            sqlserver2012及以上版本的sql生成器
+            </summary>
+        </member>
+        <member name="T:Hsj.IPlatformSpecial">
+            <summary>
+            平台特有的一些函数
+            </summary>
+        </member>
+        <member name="T:Hsj.EnumHelper">
+            <summary>
+            公共的属性
+            </summary>
+        </member>
+        <member name="M:Hsj.EnumHelper.GetDescription(System.Reflection.FieldInfo)">
+            <summary>
+            获取枚举类描述信息
+            </summary>
+            <param name="enumItem">枚举类子项</param>        
+        </member>
+        <member name="T:Hsj.HttpPostDic">
+            <summary>
+            在json转过过程中已处理object类型的问题
+            </summary>
+        </member>
+        <member name="M:Hsj.HttpPostDic.AddSearchPara(System.String,System.Object,System.Int32)">
+            <summary>
+            用来传递特殊查询参数的值，0是like 1是日期小于等于2是日期大于等于3是连接查询参数
+            </summary>
+            <param name="keyName"></param>
+            <param name="keyValue"></param>
+            <param name="searchType">0是</param>
+        </member>
+        <member name="T:Hsj.HttpPostList">
+            <summary>
+            主要用来post的时候给webapi转换值用
+            </summary>
+        </member>
+        <member name="M:Hsj.HttpClient1.CreateWebRequest(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            This method creates secure/non secure web
+            request based on the parameters passed.
+            </summary>
+            <param name="uri"></param>
+            <param name="clientHeaders">This parameter of type
+               NameValueCollection may contain any extra header
+               elements to be included in this request      </param>
+            <param name="RequestMethod">Value can POST OR GET</param>
+            <param name="isAuth">In case of secure request this would be true</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.HttpClient1.CheckValidationResult(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>
+            验证服务器证书
+            </summary>
+            <param name="sender"></param>
+            <param name="certificate"></param>
+            <param name="chain"></param>
+            <param name="errors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.HttpClient2.CreateWebRequest(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            This method creates secure/non secure web
+            request based on the parameters passed.
+            </summary>
+            <param name="uri"></param>
+            <param name="clientHeaders">This parameter of type
+               NameValueCollection may contain any extra header
+               elements to be included in this request      </param>
+            <param name="RequestMethod">Value can POST OR GET</param>
+            <param name="isAuth">In case of secure request this would be true</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.HttpSelfListener.ResponseObj(System.Net.HttpListenerResponse,System.Object)">
+            <summary>
+            先序列化json再rsponse
+            </summary>
+            <param name="response"></param>
+            <param name="responseObj"></param>
+        </member>
+        <member name="M:Hsj.HttpSelfListener.ResponseStrBytes(System.Net.HttpListenerResponse,System.String)">
+            <summary>
+            不序列化json，直接response
+            </summary>
+            <param name="response"></param>
+            <param name="responseStr"></param>
+        </member>
+        <member name="M:Hsj.ServerHelper.IsLanIp(System.String)">
+            <summary>  
+            获取本机已被使用的网络端点  
+            </summary>  
+        </member>
+        <member name="T:Hsj.TcpSelfListener.ProcessRequestEvent">
+            <summary>  
+            委托声明  
+            </summary>  
+            <param name="sender">事件发送者</param>  
+            <param name="e">事件参数</param>  
+        </member>
+        <member name="E:Hsj.TcpSelfListener.ProcessRequest">
+            <summary>  
+            线程任务请求事件  
+            </summary>  
+        </member>
+        <member name="M:Hsj.TcpSelfListener.Start(System.String,System.Int32)">
+            <summary>  
+            侦听连接线程  
+            </summary>  
+        </member>
+        <member name="M:Hsj.TcpSelfListener.ThreadPoolCallback(System.Object)">
+            <summary>  
+            线程池回调方法  
+            </summary>  
+            <param name="state">回调方法要使用的信息对象</param>  
+        </member>
+        <member name="M:Hsj.TcpSelfListener.StopServer">
+            <summary>  
+            关闭侦听器  
+            </summary>          
+        </member>
+        <member name="T:Hsj.DsJson.DataReaderJsonConverter">
+            <summary>
+            用来直接从datareader读取为json
+            </summary>
+        </member>
+        <member name="T:Hsj.DsJson.DataSetJsonConverter">
+            <summary>
+            用来转换dataset为json
+            </summary>
+        </member>
+        <member name="T:Hsj.DsJson.JsonContractResolver">
+            <summary>
+            自定义转化dataset和datatable的json
+            </summary>
+        </member>
+        <member name="M:Hsj.JsonHelper.DeserializeObject``1(System.String,System.Boolean)">
+            <summary>
+            反序列化object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="jsonStr"></param>
+            <param name="ignoreDefault">true将忽略所有的默认值与null，默认为true</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.JsonHelper.SerializeObject(System.Object)">
+            <summary>
+            序列化对象
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseCtrl.MakeView(System.String,Hsj.StrObjDic,System.String)">
+            <summary>
+            生成view，要保证线程安全，没有的话必须返回null
+            </summary>
+            <param name="actionName"></param>
+            <param name="viewData"></param>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.BaseView.ToString">
+            <summary>
+            执行模板返回字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.HtmlEDCode.String2Json(System.String)">
+            <summary>  
+            字符串转成js中用的字符串，json类型
+            </summary>  
+            <param name="s"></param>  
+            <returns></returns>  
+        </member>
+        <member name="M:Hsj.HtmlEDCode.String2Html(System.String)">
+            <summary>  
+            字符串转成js中用的字符串
+            </summary>  
+            <param name="s"></param>  
+            <returns></returns>  
+        </member>
+        <member name="M:Hsj.RanGuidHelper.MakeGuid(System.String)">
+            <summary>
+            format 和帮助一样，有n等模式，
+            </summary>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.RanGuidHelper.MakeIDTocken(System.Int64,System.Int32)">
+            <summary>
+            生成idtock,id转换后嵌入，不支持负数
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.RanGuidHelper.GetIDFromTocken(System.String)">
+            <summary>
+            从ID token中获取ID的值
+            </summary>
+            <param name="idStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.RanGuidHelper.MakeTocken(System.Int32)">
+            <summary>
+            生成固定长度的随机字符串，只有数字和字母
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.RanGuidHelper.MakeTockenByGuid">
+            <summary>
+            使用gui生成字符串，固定64位，等额gud
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.Security.SecurityHelper.GetMd5Hash(System.String)">
+            <summary>
+            获取md5加密字符串
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.StrCheckValid.IsDbNullValue(System.Object)">
+            <summary>
+            检查一个object是否null或dbnull
+            </summary>
+            <param name="dbValue"></param>        
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.StrCheckValid.IsIntNumber(System.String)">
+            <summary>
+            判断字符串是否整数
+            </summary>
+            <param name="sMatchStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.StrCheckValid.IsIntNumber(System.String,System.Int32@)">
+            <summary>
+            判断字符串是否整数
+            </summary>
+            <param name="sMatchStr">要判断的字符串</param>
+            <param name="nValue">传出来的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.StrCheckValid.IsFloatNumber(System.String,System.Double@)">
+            <summary>
+            判断是否浮点数
+            </summary>
+            <param name="sValue">要判断的字符串</param>
+            <param name="dValue">判断正确，传出来的浮点数的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.StrCheckValid.IsFloatNumber(System.String)">
+            <summary>
+            判断是否浮点数
+            </summary>
+            <param name="sValue">要判断的字符串</param>
+            <param name="dValue">判断正确，传出来的浮点数的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.StrCheckValid.IsMoneyNumber(System.String,System.Double@)">
+            <summary>
+            判断是否货币类型
+            </summary>
+            <param name="sValue">要判断的字符串</param>
+            <param name="dValue">判断正确，传出来的浮点数的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.StrCheckValid.IsMoneyNumber(System.String)">
+            <summary>
+            判断是否货币类型
+            </summary>
+            <param name="sValue">要判断的字符串</param>
+            <param name="dValue">判断正确，传出来的浮点数的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.StrCheckValid.IsDateTimeStr(System.String)">
+            <summary>
+            判断是否DateTime类型
+            </summary>
+            <param name="sValue">要判断的字符串</param>
+            <param name="dValue">判断正确，传出来的浮点数的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.StrCheckValid.IsDateTimeStr(System.String,System.DateTime@)">
+            <summary>
+            判断是否DateTime类型
+            </summary>
+            <param name="sValue">要判断的字符串</param>
+            <param name="dValue">判断正确，传出来的DateTime的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hsj.StrGetValue.ToDBC(System.String)">
+             <summary> 转半角的函数(DBC case) </summary>
+             <param name="input">任意字符串</param>
+             <returns>半角字符串</returns>
+            <remarks>
+            全角空格为12288，半角空格为32
+            其他字符半角(33-126)与全角(65281-65374)的对应关系是：均相差65248
+            </remarks>
+        </member>
+        <member name="T:Hsj.DataCache">
+            <summary>
+            系统缓存
+            </summary>
+        </member>
+    </members>
+</doc>

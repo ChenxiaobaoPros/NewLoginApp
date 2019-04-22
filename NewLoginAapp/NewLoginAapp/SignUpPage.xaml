@@ -9,11 +9,14 @@
                 <Label FontSize="Large" Text="用户名:"/>
                 <Entry x:Name="User_Name" FontSize="Default" HeightRequest="50"
                         Placeholder="请输入用户名" Keyboard="Default" ReturnType="Next" MaxLength="11"/>
+                <Label FontSize="Large" Text="邮箱:"/>
+                <Entry x:Name="User_Email" FontSize="Default" HeightRequest="50" 
+                        Placeholder="请再输入邮箱" Keyboard="Default" ReturnType="Next" MaxLength="16"/>
                 <Label FontSize="Large" Text="密码:"/>
                 <Entry x:Name="User_Pwd" FontSize="Default" HeightRequest="50" IsPassword="True" 
                         Placeholder="请输入密码" Keyboard="Default" ReturnType="Next" MaxLength="16"/>
                 <Label FontSize="Large" Text="密码:"/>
-                <Entry x:Name="User_Pwd2" FontSize="Default" HeightRequest="50" IsPassword="True" 
+                <Entry x:Name="User_PwdAgain" FontSize="Default" HeightRequest="50" IsPassword="True" 
                         Placeholder="请再输入密码" Keyboard="Default" ReturnType="Next" MaxLength="16"/>
                 <Button HeightRequest="50" Margin="8" CornerRadius="5" Text="注册" 
                         Clicked="Register_Clicked" FontSize="Default" TextColor="White" 
