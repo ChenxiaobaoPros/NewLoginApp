@@ -29,6 +29,8 @@ namespace NewLoginAapp
                 MainPage = new NavigationPage(new MainPage());
             }
         }
+
+        #region sqlite 例子
         public static SqliteConnection connection;
         public static void DoSomeDataAccess()
         {
@@ -86,6 +88,7 @@ namespace NewLoginAapp
             }
             connection.Close();
         }
+        #endregion
 
         protected override void OnStart()
         {

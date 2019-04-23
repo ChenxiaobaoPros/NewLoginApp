@@ -38,7 +38,7 @@ namespace NewLoginAapp
             //本地数据库
             try
             {
-              var _user=  await userSQLiteService.SelectUser(user);
+              var _user= userSQLiteService.SelectUser(user);
                 if (_user != null)
                 {
                     //跳转主界面

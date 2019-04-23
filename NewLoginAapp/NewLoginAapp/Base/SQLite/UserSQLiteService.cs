@@ -8,17 +8,17 @@ namespace NewLoginAapp.Base.SQLite
     public class UserSQLiteService:SQLiteBaseDbBusi<User>
     {
         //查询
-        public async Task<List<User>> GetUsers()
+        public List<User> GetUsers()
         {
-            return await DbaHelper.GetListAsync<User>();
+            return DbaHelper.GetList<User>();
         }
         //匹配用户
-        public async Task<User> SelectUser(User user)
+        public User SelectUser(User user)
         {
             DbaHelper.Sql.Select.Star.From(nameof(User)).Where
                 .Field_Equal_Para(nameof(User.Username), user.Username)
-                .And.Field_Equal_Para(nameof(User.Password),user.Password);
-            return await DbaHelper.GetEntityAsync<User>();
+                .And.Field_Equal_Para(nameof(User.Password),user.Password).Empty();
+            return DbaHelper.GetEntity<User>();
         }
         //查重
         public User CnkiUser(User user)
@@ -41,7 +41,6 @@ namespace NewLoginAapp.Base.SQLite
             }
             else
             {
-                //
                 return 0;
             }
 
