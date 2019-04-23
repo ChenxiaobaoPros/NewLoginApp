@@ -10,6 +10,7 @@ namespace NewLoginAapp.Base.SQLite
         //查询
         public List<User> GetUsers()
         {
+        
             return DbaHelper.GetList<User>();
         }
         //匹配用户
@@ -32,11 +33,12 @@ namespace NewLoginAapp.Base.SQLite
         //保存用户
         public long SaveUser(User user)
         {
+           //return Insert(user);//IOS可以
             var userCnki = CnkiUser(user);
             if (userCnki == null)
             {
                 //保存
-                DbaHelper.Insert<User>(user);
+                Insert(user);
                 return DbaHelper.GetValue<int>();
             }
             else
