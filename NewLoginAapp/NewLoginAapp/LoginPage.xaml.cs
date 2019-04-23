@@ -42,13 +42,26 @@ namespace NewLoginAapp
                 if (_user != null)
                 {
                     //跳转主界面
+                    //传递参数1 :新页的构造函数
+                    //传递参数2 :
+                    //var contact = new Contact {
+                    //Name = "Jane Doe",
+                    //Age = 30,
+                    //Occupation = "Developer",
+                    //Country = "USA"
+                    // };
+                    //var secondPage = new SecondPage();
+                    //secondPage.BindingContext = contact;
+                    //await Navigation.PushAsync(secondPage);
+                    //传递参数3 :
+
                     App.isUserLogIn = true;
                     Navigation.InsertPageBefore(new MainPage(), this);
                     await Navigation.PopAsync();
                 }
                 else
                 {
-                    await DisplayAlert("操作提示","登录失败","确定");
+                    await DisplayAlert("操作提示", "登录失败", "确定");
                 }
             }
             catch (Exception ex)

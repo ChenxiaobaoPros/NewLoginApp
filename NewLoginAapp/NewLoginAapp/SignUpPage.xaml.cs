@@ -33,12 +33,12 @@ namespace NewLoginAapp
             };
             try
             {
-                var isSuccful = userSQLiteService.SaveUser(user).Result;
+                var isSuccful = userSQLiteService.SaveUser(user);
                 if (isSuccful != 0)
                 {
                     //跳转到登录界面
                     App.isUserLogIn = true;
-                    Navigation.InsertPageBefore(new MainPage(), Navigation.NavigationStack.First());
+                    Navigation.InsertPageBefore(new LoginPage(), Navigation.NavigationStack.First());
                     await Navigation.PopToRootAsync();
                 }
                 else
@@ -48,8 +48,7 @@ namespace NewLoginAapp
             }
             catch (Exception ex)
             {
-
-
+                string str = ex.Message;
                 throw ex;
             }
            
