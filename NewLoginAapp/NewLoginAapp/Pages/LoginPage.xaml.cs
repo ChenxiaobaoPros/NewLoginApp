@@ -27,6 +27,14 @@ namespace NewLoginAapp
         //登录
         private async void Login_Clicked(object sender, EventArgs e)
         {
+            #region 性能测试
+            //var time1= userSQLiteService.InsertUsers();
+            //Console.WriteLine("添加消耗时间:"+time1+"毫秒");
+            //var time2 = userSQLiteService.InsertUsers();
+            //Console.WriteLine("查询消耗时间:" + time2+"毫秒");
+            var count = userSQLiteService.GetUserCount();
+            Console.WriteLine("查询消耗时间:" + count);
+            #endregion
             //验证信息
 
             //提交

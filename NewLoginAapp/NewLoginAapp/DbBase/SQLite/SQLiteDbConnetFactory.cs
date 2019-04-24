@@ -7,6 +7,20 @@ namespace NewLoginAapp.Base.SQLite
 {
      public class SQLiteDbConnetFactory : Hsj.Data.GetDbConnectFactory 
     {
+        static SQLiteDbConnetFactory()
+        {
+            //IsIOS = true;
+            switch (Xamarin.Forms.Device.RuntimePlatform)
+            {
+                case Xamarin.Forms.Device.iOS:
+                    IsIOS = true; 
+                    break;
+                case Xamarin.Forms.Device.Android:
+                    IsIOS = false;
+                    break;
+            }
+        }
+
         public static string sqlitePath;
 
         public override DbConnection GetMasterDbConn()
@@ -86,18 +100,18 @@ namespace NewLoginAapp.Base.SQLite
             }
 
             #region 查询
-            using (var contents = connection.CreateCommand())
-            {
-                connection.Open();
-                contents.CommandText = "SELECT [Username], [Password] from [User]";
-                var r = contents.ExecuteReader();
-                Console.WriteLine("Reading data");
-                while (r.Read())
-                    Console.WriteLine("\tKey={0}; Value={1}",
-                                      r["Username"].ToString(),
-                                      r["Password"].ToString());
-                connection.Close();
-            }
+            //using (var contents = connection.CreateCommand())
+            //{
+            //    connection.Open();
+            //    contents.CommandText = "SELECT [Username], [Password] from [User]";
+            //    var r = contents.ExecuteReader();
+            //    Console.WriteLine("Reading data");
+            //    while (r.Read())
+            //        Console.WriteLine("\tKey={0}; Value={1}",
+            //                          r["Username"].ToString(),
+            //                          r["Password"].ToString());
+            //    connection.Close();
+            //}
             #endregion
 
             return connection;

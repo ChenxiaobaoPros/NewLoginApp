@@ -1,14 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:NewLoginAapp"
              Title="主界面"
-             x:Class="NewLoginAapp.MainPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
-
-</ContentPage>
+             x:Class="NewLoginAapp.MainPage"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             android:TabbedPage.BarItemColor="Black"
+             android:TabbedPage.BarSelectedItemColor="Red" >
+    <!--导航选项卡设置标题和图标-->
+    <NavigationPage Title="消息" Icon="schedule.png">
+        <x:Arguments>
+            <local:MessagePage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="联系人" Icon="schedule.png">
+        <x:Arguments>
+            <local:ContactPage Title="联系人" />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="热点" Icon="schedule.png">
+        <x:Arguments>
+            <local:HotNewsPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="动态" Icon="schedule.png">
+        <x:Arguments>
+            <local:DynamicsPage />
+        </x:Arguments>
+    </NavigationPage>
+    <!--普通选项卡-->
+    <!--<local:ContactPage Title="联系人" />-->
+    <!--<local:HotNewsPage  Title="热点"/>-->
+    <!--<local:DynamicsPage  Title="动态"/>-->
+</TabbedPage>
